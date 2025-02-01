@@ -1,13 +1,15 @@
-import { FC } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import { WelcomePage } from './components/pages/WelcomePage';
 import { PricingCardsPage } from './components/pages/PricingCardsPage';
+import { DefaultLayout } from './components/layouts/DefaultLayout';
 
-export const Routing: FC = () => {
-  return (
-    <Routes>
-      <Route path="/pricing-cards" element={<PricingCardsPage />} />
-      <Route path="/" element={<WelcomePage />} />
-    </Routes>
-  );
-};
+export const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <DefaultLayout />, // Parent component
+    children: [
+      { index: true, element: <WelcomePage /> },
+      { path: 'pricing-cards', element: <PricingCardsPage /> },
+    ],
+  },
+]);

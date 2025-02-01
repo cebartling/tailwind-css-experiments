@@ -1,20 +1,8 @@
-import { Routing } from './routing.tsx';
-import { Header } from './components/foundational/Header';
-import { Footer } from './components/foundational/Footer';
-import { Main } from './components/foundational/Main';
-import { Spacer } from './components/foundational/Spacer';
+import {RouterProvider} from "react-router-dom";
+import { router } from './routing.tsx';
 
 function App() {
-  return (
-    <div className="flex flex-col min-h-screen bg-background text-text">
-      <Header />
-      <Spacer height={16} />
-      <Main>
-        <Routing />
-      </Main>
-      <Footer />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
