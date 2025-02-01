@@ -1,7 +1,8 @@
+import { Routing } from './routing.tsx';
 import { Header } from './components/foundational/Header';
 import { Footer } from './components/foundational/Footer';
 import { Main } from './components/foundational/Main';
-import {Spacer} from "./components/foundational/Spacer";
+import { Spacer } from './components/foundational/Spacer';
 
 function App() {
   return (
@@ -9,11 +10,7 @@ function App() {
       <Header />
       <Spacer height={16} />
       <Main>
-        <h1 className="text-2xl font-bold">Welcome</h1>
-        <p className="mt-2 text-lg">
-          This page demonstrates a footer that stays at the bottom of the
-          screen.
-        </p>
+        <Routing />
       </Main>
       <Footer />
     </div>
