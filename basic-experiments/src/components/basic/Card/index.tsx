@@ -1,6 +1,10 @@
-import { FC, ReactNode } from 'react';
-import {BodyProps, CallToActionProps, CardProps, TitleProps} from "@components/basic/Card/types";
-
+import { FC } from 'react';
+import {
+  BodyProps,
+  CallToActionProps,
+  CardProps,
+  TitleProps,
+} from '@components/basic/Card/types';
 
 const Title: FC<TitleProps> = ({ children }: TitleProps) => {
   return <h3 className="text-xl font-semibold">{children}</h3>;
