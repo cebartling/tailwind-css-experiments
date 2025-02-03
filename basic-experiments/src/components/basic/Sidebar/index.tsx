@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Sidebar: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -37,30 +38,12 @@ const Sidebar: FC = () => {
 
         {/* Navigation Links */}
         <nav className="space-y-4">
-          <a
-            href="#"
+          <Link
+            to="/pricing-cards"
             className="block p-2 text-gray-800 hover:bg-gray-200 rounded"
           >
-            Home
-          </a>
-          <a
-            href="#"
-            className="block p-2 text-gray-800 hover:bg-gray-200 rounded"
-          >
-            About
-          </a>
-          <a
-            href="#"
-            className="block p-2 text-gray-800 hover:bg-gray-200 rounded"
-          >
-            Services
-          </a>
-          <a
-            href="#"
-            className="block p-2 text-gray-800 hover:bg-gray-200 rounded"
-          >
-            Contact
-          </a>
+            Pricing Cards
+          </Link>
         </nav>
       </div>
     </div>
