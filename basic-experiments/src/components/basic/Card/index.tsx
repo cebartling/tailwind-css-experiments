@@ -1,20 +1,6 @@
 import { FC, ReactNode } from 'react';
+import {BodyProps, CallToActionProps, CardProps, TitleProps} from "@components/basic/Card/types";
 
-type CardProps = {
-  children: ReactNode;
-};
-
-type TitleProps = {
-  children: string | ReactNode;
-};
-
-type CallToActionProps = {
-  children: string;
-};
-
-type BodyProps = {
-  children: ReactNode;
-};
 
 const Title: FC<TitleProps> = ({ children }: TitleProps) => {
   return <h3 className="text-xl font-semibold">{children}</h3>;
@@ -40,7 +26,7 @@ const Card: FC<CardProps> & {
   Body: typeof Body;
 } = ({ children }: CardProps) => {
   return (
-    <div className="border rounded-2xl shadow-lg p-6 w-80 text-center">
+    <div className="border border-gray-300 rounded-2xl shadow-xl p-6 w-80 text-center">
       {children}
     </div>
   );
