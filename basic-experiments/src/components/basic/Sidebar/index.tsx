@@ -47,6 +47,7 @@ const Sidebar: FC = () => {
             <Link
               key={index}
               to={item.to}
+              onClick={() => setIsOpen(false)}
               className="block p-2 text-gray-800 hover:bg-gray-200 rounded"
             >
               {item.label}
