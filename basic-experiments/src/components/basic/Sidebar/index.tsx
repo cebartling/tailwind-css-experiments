@@ -2,6 +2,11 @@ import { FC, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const data = [
+  { to: '/components', label: 'Components' },
+  { to: '/pricing-cards', label: 'Pricing Cards' },
+];
+
 const Sidebar: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -38,12 +43,15 @@ const Sidebar: FC = () => {
 
         {/* Navigation Links */}
         <nav className="space-y-4">
-          <Link
-            to="/pricing-cards"
-            className="block p-2 text-gray-800 hover:bg-gray-200 rounded"
-          >
-            Pricing Cards
-          </Link>
+          {data.map((item, index) => (
+            <Link
+              key={index}
+              to={item.to}
+              className="block p-2 text-gray-800 hover:bg-gray-200 rounded"
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
       </div>
     </div>
