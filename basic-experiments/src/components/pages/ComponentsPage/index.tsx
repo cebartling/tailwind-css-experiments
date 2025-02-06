@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import ToggleButton from '@components/basic/ToggleButton';
 import RangeSlider from '@components/basic/RangeSlider';
+import Skeleton from '@components/basic/Skeleton';
 
 export const ComponentsPage: FC = () => {
   return (
@@ -20,6 +21,9 @@ export const ComponentsPage: FC = () => {
               console.log('Range slider value change', value)
             }
           />
+        </div>
+        <div className="flex flex-row space-x-4">
+          <Skeleton width={800} height={600} />
         </div>
       </div>
     </>
