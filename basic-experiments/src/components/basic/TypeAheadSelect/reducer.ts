@@ -2,7 +2,7 @@ import {
   Action,
   TypeAheadSelectActionTypes,
   TypeAheadSelectState,
-} from '@components/basic/TypeAheadSelect/types.ts';
+} from '@components/basic/TypeAheadSelect/types';
 
 export const reducer = (
   state: TypeAheadSelectState,
