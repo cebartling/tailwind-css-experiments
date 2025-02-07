@@ -15,6 +15,8 @@ export const reducer = (
       return { ...state, displayValue: action.payload };
     case TypeAheadSelectActionTypes.SET_SHOW_DROPDOWN:
       return { ...state, showDropdown: action.payload };
+    case TypeAheadSelectActionTypes.SET_HIGHLIGHTED_INDEX:
+      return { ...state, highlightedIndex: action.payload };
     default:
       return state;
   }
