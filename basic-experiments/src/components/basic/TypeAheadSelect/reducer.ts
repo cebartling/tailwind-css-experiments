@@ -1,12 +1,19 @@
-import {Action, State} from "@components/basic/TypeAheadSelect/types.ts";
+import {
+  Action,
+  TypeAheadSelectActionTypes,
+  TypeAheadSelectState,
+} from '@components/basic/TypeAheadSelect/types.ts';
 
-export const reducer = (state: State, action: Action): State => {
+export const reducer = (
+  state: TypeAheadSelectState,
+  action: Action
+): TypeAheadSelectState => {
   switch (action.type) {
-    case 'SET_QUERY':
+    case TypeAheadSelectActionTypes.SET_QUERY:
       return { ...state, query: action.payload };
-    case 'SET_DISPLAY_VALUE':
+    case TypeAheadSelectActionTypes.SET_DISPLAY_VALUE:
       return { ...state, displayValue: action.payload };
-    case 'SET_SHOW_DROPDOWN':
+    case TypeAheadSelectActionTypes.SET_SHOW_DROPDOWN:
       return { ...state, showDropdown: action.payload };
     default:
       return state;

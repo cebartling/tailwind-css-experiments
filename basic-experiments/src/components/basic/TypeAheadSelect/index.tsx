@@ -2,18 +2,21 @@ import React, { useCallback, useEffect, useMemo, useReducer } from 'react';
 import {
   Option,
   TypeAheadSelectProps,
+  TypeAheadSelectState,
 } from '@components/basic/TypeAheadSelect/types';
 import { reducer } from '@components/basic/TypeAheadSelect/reducer';
+
+const initialState: TypeAheadSelectState = {
+  query: '',
+  displayValue: '',
+  showDropdown: false,
+};
 
 const TypeAheadSelect: React.FC<TypeAheadSelectProps> = ({
   options,
   onSelect,
 }: TypeAheadSelectProps) => {
-  const [state, dispatch] = useReducer(reducer, {
-    query: '',
-    displayValue: '',
-    showDropdown: false,
-  });
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const filteredOptions = useMemo(() => {
     if (state.query.length > 0) {
@@ -57,7 +60,7 @@ const TypeAheadSelect: React.FC<TypeAheadSelectProps> = ({
             filteredOptions.map((option, index) => (
               <li
                 key={`${option.value}-${index}`}
-                className="px-4 py-2 cursor-pointer hover:bg-gray-200"
+                className="px-4 py-2 cursor-pointer hover:bg-gray-200 rounded-lg"
                 onClick={() => handleSelect(option)}
               >
                 {option.label}
