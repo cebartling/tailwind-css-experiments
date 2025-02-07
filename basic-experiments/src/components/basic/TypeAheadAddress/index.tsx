@@ -15,14 +15,16 @@ import Input from '@components/basic/Input';
 import CardContent from '@components/basic/TypeAheadAddress/CardContent';
 import Card from '@components/basic/TypeAheadAddress/Card';
 
+const initialState = {
+  inputValue: '',
+  suggestions: [],
+  isLoading: false,
+};
+
 const TypeAheadAddress: React.FC<TypeAheadAddressProps> = ({
   addressAPI = googleAddressAPI,
 }: TypeAheadAddressProps) => {
-  const [state, dispatch] = useReducer(reducer, {
-    inputValue: '',
-    suggestions: [],
-    isLoading: false,
-  });
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const debounceTimer = useRef<NodeJS.Timeout | null>(null);
 
