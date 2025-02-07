@@ -1,24 +1,18 @@
-/// <reference types="vitest" />
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+/// <reference types="vitest/config" />
+import { mergeConfig } from 'vite';
+import viteConfig from './vite.config';
 
-export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      '~': '/app',
-    },
-  },
+export default mergeConfig(viteConfig, {
   test: {
     environment: 'jsdom',
     globals: true,
-    setupFiles: './app/test/setup.ts',
+    setupFiles: './src/test/setup.ts',
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html'],
-      exclude: ['node_modules/', 'app/test/setup.ts'],
+      exclude: ['node_modules/', 'src/test/setup.ts'],
     },
-    include: ['app/**/*.{test,spec}.{js,jsx,ts,tsx}'],
+    include: ['src/**/*.{test,spec}.{js,jsx,ts,tsx}'],
     exclude: ['node_modules', 'dist'],
   },
 });
