@@ -8,7 +8,7 @@ import { reducer } from '@components/basic/TypeAheadSelect/reducer';
 const TypeAheadSelect: React.FC<TypeAheadSelectProps> = ({
   options,
   onSelect,
-}) => {
+}: TypeAheadSelectProps) => {
   const [state, dispatch] = useReducer(reducer, {
     query: '',
     displayValue: '',

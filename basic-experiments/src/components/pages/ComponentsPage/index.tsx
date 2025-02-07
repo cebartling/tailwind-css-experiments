@@ -1,7 +1,17 @@
 import { FC } from 'react';
+import { Option } from '@components/basic/TypeAheadSelect/types';
 import ToggleButton from '@components/basic/ToggleButton';
 import RangeSlider from '@components/basic/RangeSlider';
 import Skeleton from '@components/basic/Skeleton';
+import TypeAheadSelect from '@components/basic/TypeAheadSelect';
+
+const options: Option[] = [
+  { value: 'onions', label: 'Onions' },
+  { value: 'broccoli', label: 'Broccoli' },
+  { value: 'carrots', label: 'Carrots' },
+  { value: 'green beans', label: 'Green Beans' },
+  { value: 'asparagus', label: 'Asparagus' },
+];
 
 export const ComponentsPage: FC = () => {
   return (
@@ -24,6 +34,14 @@ export const ComponentsPage: FC = () => {
         </div>
         <div className="flex flex-row space-x-4">
           <Skeleton width={800} height={600} />
+        </div>
+        <div className="flex flex-row space-x-4">
+          <TypeAheadSelect
+            onSelect={(option: Option): void =>
+              console.log('Option selected', option)
+            }
+            options={options}
+          />
         </div>
       </div>
     </>
