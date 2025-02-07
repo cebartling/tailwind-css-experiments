@@ -20,17 +20,19 @@ const CallToAction: FC<CallToActionProps> = ({
   );
 };
 
-const Body: FC<BodyProps> = ({ children }: BodyProps) => {
-  return <div className="mt-4">{children}</div>;
+const Body: FC<BodyProps> = ({ children, className }: BodyProps) => {
+  return <div className={`mt-4 ${className}`}>{children}</div>;
 };
 
 const Card: FC<CardProps> & {
   Title: typeof Title;
   CallToAction: typeof CallToAction;
   Body: typeof Body;
-} = ({ children }: CardProps) => {
+} = ({ children, className }: CardProps) => {
   return (
-    <div className="border border-gray-300 rounded-2xl shadow-xl p-6 w-80 text-center">
+    <div
+      className={`border border-gray-300 rounded-2xl shadow-xl p-6 w-80 text-center ${className}`}
+    >
       {children}
     </div>
   );
