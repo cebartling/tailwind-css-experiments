@@ -4,6 +4,8 @@ import ToggleButton from '@components/basic/ToggleButton';
 import RangeSlider from '@components/basic/RangeSlider';
 import Skeleton from '@components/basic/Skeleton';
 import TypeAheadSelect from '@components/basic/TypeAheadSelect';
+import TypeAheadAddress from '@components/basic/TypeAheadAddress';
+import { googleAddressAPI } from '@components/basic/TypeAheadAddress/services.ts';
 
 const options: Option[] = [
   { value: 'onions', label: 'Onions' },
@@ -42,6 +44,9 @@ export const ComponentsPage: FC = () => {
             }
             options={options}
           />
+        </div>
+        <div className="flex flex-row space-x-4">
+          <TypeAheadAddress addressAPI={googleAddressAPI} />
         </div>
       </div>
     </>
