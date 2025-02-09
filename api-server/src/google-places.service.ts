@@ -16,7 +16,6 @@ export class GooglePlacesService {
   async getSuggestions(query: string): Promise<AddressSuggestion[]> {
     const apiKey = this.configService.get<string>('GOOGLE_MAPS_API_KEY');
     this.logger.log(`Fetching address suggestions for query: ${query}`);
-    this.logger.log(`API key: ${apiKey}`);
     const response = await fetch(
       `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&key=${apiKey}`,
       {
