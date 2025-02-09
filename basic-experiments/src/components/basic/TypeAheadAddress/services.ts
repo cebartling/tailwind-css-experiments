@@ -1,30 +1,17 @@
-import { AddressAPI } from '@components/basic/TypeAheadAddress/types.ts';
+import {AddressAPI, AddressSuggestion} from '@components/basic/TypeAheadAddress/types.ts';
 
 export const googleAddressAPI: AddressAPI = {
-  fetchSuggestions: async (query: string) => {
+  fetchSuggestions: async (query: string): Promise<AddressSuggestion[]> => {
     const response = await fetch(
-      `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`,
+      `http://localhost:3000/places/address-suggestions?query=${query}`,
       {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
-          'Access-Control-Allow-Origin': '*',
         },
       }
     );
-    const data = await response.json();
-    return data.predictions.map(
-      (p: {
-        place_id: string;
-        description: string;
-      }): {
-        id: string;
-        description: string;
-      } => ({
-        id: p.place_id,
-        description: p.description,
-      })
-    );
+    return await response.json() as AddressSuggestion[];
   },
 };

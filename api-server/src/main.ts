@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger } from '@nestjs/common';
 
-const allowedOrigins = ['http://localhost:4200', 'http://localhost:3000'];
+const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
 
 async function bootstrap() {
   const logger = new Logger('Bootstrap');
