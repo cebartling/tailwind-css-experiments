@@ -1,4 +1,4 @@
-import { googleAddressAPI } from '@components/basic/TypeAheadAddress/services';
+import { defaultAddressAPI } from '@components/basic/TypeAheadAddress/services';
 import { describe, expect, it, vi, Mock } from 'vitest';
 
 describe('googleAddressAPI', () => {
@@ -15,7 +15,7 @@ describe('googleAddressAPI', () => {
       })
     ) as Mock;
 
-    const suggestions = await googleAddressAPI.fetchSuggestions('test');
+    const suggestions = await defaultAddressAPI.fetchSuggestions('test');
     expect(suggestions).toEqual([
       { id: '1', description: 'Place 1' },
       { id: '2', description: 'Place 2' },
@@ -30,7 +30,7 @@ describe('googleAddressAPI', () => {
       })
     ) as Mock;
 
-    const suggestions = await googleAddressAPI.fetchSuggestions('test');
+    const suggestions = await defaultAddressAPI.fetchSuggestions('test');
     expect(suggestions).toEqual([]);
   });
 
@@ -39,7 +39,7 @@ describe('googleAddressAPI', () => {
       Promise.reject(new Error('Fetch error'))
     ) as Mock;
 
-    await expect(googleAddressAPI.fetchSuggestions('test')).rejects.toThrow(
+    await expect(defaultAddressAPI.fetchSuggestions('test')).rejects.toThrow(
       'Fetch error'
     );
   });

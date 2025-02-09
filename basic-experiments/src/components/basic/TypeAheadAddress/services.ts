@@ -1,6 +1,6 @@
 import {AddressAPI, AddressSuggestion} from '@components/basic/TypeAheadAddress/types.ts';
 
-export const googleAddressAPI: AddressAPI = {
+export const defaultAddressAPI: AddressAPI = {
   fetchSuggestions: async (query: string): Promise<AddressSuggestion[]> => {
     const response = await fetch(
       `http://localhost:3000/places/address-suggestions?query=${query}`,

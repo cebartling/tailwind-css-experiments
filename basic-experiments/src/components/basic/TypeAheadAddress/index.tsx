@@ -9,7 +9,7 @@ import {
   ActionType,
   TypeAheadAddressProps,
 } from '@components/basic/TypeAheadAddress/types';
-import { googleAddressAPI } from '@components/basic/TypeAheadAddress/services';
+import { defaultAddressAPI } from '@components/basic/TypeAheadAddress/services';
 import { reducer } from '@components/basic/TypeAheadAddress/reducer';
 import Input from '@components/basic/Input';
 import CardContent from '@components/basic/TypeAheadAddress/CardContent';
@@ -22,7 +22,7 @@ const initialState = {
 };
 
 const TypeAheadAddress: React.FC<TypeAheadAddressProps> = ({
-  addressAPI = googleAddressAPI,
+  addressAPI = defaultAddressAPI,
 }: TypeAheadAddressProps) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
