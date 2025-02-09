@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { AddressSuggestion } from './types';
 import { ConfigService } from '@nestjs/config';
+import { AddressSuggestion } from '../types';
 
 @Injectable()
 export class GooglePlacesService {

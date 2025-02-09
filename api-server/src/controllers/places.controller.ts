@@ -1,6 +1,6 @@
 import { Controller, Get, Logger, Query } from '@nestjs/common';
-import { GooglePlacesService } from './google-places.service';
-import { AddressSuggestion } from './types';
+import { GooglePlacesService } from '../services/google-places.service';
+import { AddressSuggestion } from '../types';
 
 @Controller('places')
 export class PlacesController {

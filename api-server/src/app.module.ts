@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { PlacesController } from './places.controller';
-import { GooglePlacesService } from './google-places.service';
+import { AppController } from './controllers/app.controller';
+import { AppService } from './services/app.service';
+import { PlacesController } from './controllers/places.controller';
+import { GooglePlacesService } from './services/google-places.service';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
