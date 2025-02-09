@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PlacesController } from './places.controller';
 import { GooglePlacesService } from '../services/google-places.service';
-import { AddressSuggestion } from '../types';
+import { AddressSuggestion } from '../schemas/address-suggestion.schema';
 
 describe('PlacesController', () => {
   let placesController: PlacesController;
