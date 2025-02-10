@@ -48,3 +48,15 @@ export default tseslint.config({
   },
 });
 ```
+
+## Run the project in a docker container
+
+- Build the docker image in `./api-server` directory. See documentation [here](./api-server/README.md).
+
+```bash
+# run the docker container
+$ docker run -d -p 3000:3000 -e GOOGLE_MAPS_API_KEY=[api-key] --name tailwind-css-experiments-api-server tailwind-css-experiments-api-server
+```
+
+- Replace `[api-key]` with your Google Maps API key.
+
