@@ -58,6 +58,18 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Run the project in a docker container
+
+```bash
+# build the docker image
+$ docker build -t tailwind-css-experiments-api-server .
+
+# run the docker container
+$ docker run -d -p 3000:3000 -e GOOGLE_MAPS_API_KEY=[api-key] --name tailwind-css-experiments-api-server tailwind-css-experiments-api-server
+```
+
+- Replace `[api-key]` with your Google Maps API key.
+
 ## Resources
 
 Check out a few resources that may come in handy when working with NestJS:
